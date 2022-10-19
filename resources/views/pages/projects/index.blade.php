@@ -24,7 +24,6 @@
         </div>
         <button
           class="watch-video"
-          style="margin-left: 240px"
           data-src="{{ asset('video/about.mp4') }}"
           onclick="window.playVideo(this)"
           type="button">
