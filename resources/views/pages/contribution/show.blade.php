@@ -4,6 +4,22 @@
   Koinoti Nav | Contribution to society
 @endsection
 
+@section('meta-tags')
+  @php
+    $share_text = preg_replace('#<[^>]+>#', ' ', $data->contribution->content);
+    $share_text = mb_strlen($share_text) < 170 ? $share_text : mb_substr($share_text, 0, 166) . '...';
+  @endphp
+  <meta name="description" content="{{ $share_text }}">
+  <meta property="og:description" content="{{ $share_text }}">
+  <meta property="og:title" content="{{ $data->contribution->title }}" />
+  <meta property="og:image:alt" content="{{ $data->contribution->title }}">
+  <meta name="twitter:title" content="{{ $data->contribution->title }}">
+  @if (count($data->contribution->images) > 0)
+    <meta property="og:image" content="{{ asset($data->contribution->images[0]->src) }}">
+    <meta name="twitter:image" content="{{ asset($data->contribution->images[0]->src) }}">
+  @endif
+@endsection
+
 @section('content')
   <main class="contribution-show-page">
     <div class="container">

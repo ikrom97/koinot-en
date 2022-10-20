@@ -4,6 +4,22 @@
   Koinoti Nav | News
 @endsection
 
+@section('meta-tags')
+  @php
+    $share_text = preg_replace('#<[^>]+>#', ' ', $data->news->content);
+    $share_text = mb_strlen($share_text) < 170 ? $share_text : mb_substr($share_text, 0, 166) . '...';
+  @endphp
+  <meta name="description" content="{{ $share_text }}">
+  <meta property="og:description" content="{{ $share_text }}">
+  <meta property="og:title" content="{{ $data->news->title }}" />
+  <meta property="og:image:alt" content="{{ $data->news->title }}">
+  <meta name="twitter:title" content="{{ $data->news->title }}">
+  @if (count($data->news->images) > 0)
+    <meta property="og:image" content="{{ asset($data->news->images[0]->src) }}">
+    <meta name="twitter:image" content="{{ asset($data->news->images[0]->src) }}">
+  @endif
+@endsection
+
 @section('content')
   <main class="news-show-page">
     @if (count($data->news->images) != 0)

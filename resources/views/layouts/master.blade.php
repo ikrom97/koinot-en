@@ -8,6 +8,23 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>@yield('title')</title>
 
+  <meta name="keywords" content="Group, Group of Companies, holding, universe, Tajikistan, finance, contribution to society, mission, vision, values, projects, career, development of the country, Dushanbe" />
+  <meta property="og:site_name" content="Koinoti Nav">
+  <meta property="og:type" content="object" />
+  <meta name="twitter:card" content="summary_large_image">
+
+  @hasSection('meta-tags')
+    @yield('meta-tags')
+  @else
+    <meta name="description" content="KOINOTI NAV Group unites a number of of production and trade enterprises working in the field of supply and realization of consumer goods, medicines and food, maintenance and sale of cars, improvement of education and qualification of specialists.">
+    <meta property="og:description" content="KOINOTI NAV Group unites a number of of production and trade enterprises working in the field of supply and realization of consumer goods, medicines and food, maintenance and sale of cars, improvement of education and qualification of specialists.">
+    <meta property="og:title" content="Koinoti Nav" />
+    <meta property="og:image" content="{{ asset('favicons/icon.svg') }}">
+    <meta property="og:image:alt" content="Koinoti Nav – Logo">
+    <meta name="twitter:title" content="Koinoti Nav">
+    <meta name="twitter:image" content="{{ asset('favicons/icon.svg') }}">
+  @endif
+
   <link rel="icon" href="{{ asset('favicon.ico') }}">
   <link rel="icon" href="{{ asset('favicon/icon.svg') }}" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{{ asset('favicon/180x180.png') }}">
