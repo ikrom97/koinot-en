@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  Koinoti Nav | Projects
+  KOINOTI NAV | Projects
 @endsection
 
 @section('content')

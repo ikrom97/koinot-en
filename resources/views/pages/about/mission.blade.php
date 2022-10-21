@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  Koinoti Nav | Mission, Vision, Values
+  KOINOTI NAV | Mission, Vision, Values
 @endsection
 
 @section('content')

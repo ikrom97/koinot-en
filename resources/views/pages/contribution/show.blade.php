@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  Koinoti Nav | Contribution to society
+  KOINOTI NAV | Contribution to society
 @endsection
 
 @section('meta-tags')
