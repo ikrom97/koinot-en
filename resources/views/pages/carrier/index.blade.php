@@ -68,14 +68,14 @@
         <ol class="carrier-page__principles-list">
           <li class="carrier-page__principles-item">
             <div class="content">
-              <h3>Respect and Integrity</h3>
+              <h3>Respect and integrity</h3>
               <p>Respect yourself and others! <br>
                 Honest, open and decent!</p>
             </div>
           </li>
           <li class="carrier-page__principles-item">
             <div class="content">
-              <h3>Worldview and Happiness</h3>
+              <h3>Worldview and happiness</h3>
               <p>Have a holistic worldview! <br>
                 Satisfied with the present!</p>
             </div>
@@ -89,7 +89,7 @@
           </li>
           <li class="carrier-page__principles-item">
             <div class="content">
-              <h3>Leadership and Teamwork</h3>
+              <h3>Leadership and teamwork</h3>
               <p>I am a Leader! Creating Leaders! <br>
                 Acting on trust and collaboration!</p>
             </div>
