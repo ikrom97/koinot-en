@@ -40,6 +40,11 @@
           </a>
         </dd>
         <dd class="page-footer__menu-item">
+          <a class="page-footer__menu-link" href="https://sport.koinotinav.com/" target="_blank">
+            KOINOTI NAV Cup
+          </a>
+        </dd>
+        <dd class="page-footer__menu-item">
           <a class="page-footer__menu-link" href="{{ route('carrier') }}">
             Carreer
           </a>

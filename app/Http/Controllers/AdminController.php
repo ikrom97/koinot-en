@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\Helper;
 use App\Models\Banner;
 use App\Models\Contribution;
 use App\Models\History;
@@ -56,12 +55,6 @@ class AdminController extends Controller
             $banner->page = $request->page;
             $fileName = uniqid() . '.' . $file->extension();
             $file->move(public_path('img/banners'), $fileName);
-            Helper::resize_crop_image(
-              1920,
-              540,
-              public_path('img/banners/' . $fileName),
-              public_path('img/banners/' . $fileName)
-            );
             $banner->img = 'img/banners/' . $fileName;
             $banner->save();
           }
@@ -141,8 +134,8 @@ class AdminController extends Controller
 
         if (count($news->images) != 0) {
           foreach ($news->images as $image) {
-            unlink($image->src);
-            unlink($image->thumb_src);
+            file_exists($image->src) && unlink($image->src);
+            file_exists($image->thumb_src) && unlink($image->thumb_src);
             $image->delete();
           }
         }
@@ -176,20 +169,8 @@ class AdminController extends Controller
             $img->news_id = $news->id;
             $fileName = uniqid() . '.' . $file->extension();
             $file->move(public_path('img/news'), $fileName);
-            Helper::resize_crop_image(
-              1280,
-              540,
-              public_path('img/news/' . $fileName),
-              public_path('img/news/' . $fileName)
-            );
-            Helper::resize_crop_image(
-              360,
-              150,
-              public_path('img/news/' . $fileName),
-              public_path('img/news/thumbs/' . $fileName)
-            );
             $img->src = 'img/news/' . $fileName;
-            $img->thumb_src = 'img/news/thumbs/' . $fileName;
+            $img->thumb_src = 'img/news/' . $fileName;
             $img->save();
           }
         }
@@ -208,20 +189,8 @@ class AdminController extends Controller
             $img->news_id = $news->id;
             $fileName = uniqid() . '.' . $file->extension();
             $file->move(public_path('img/news'), $fileName);
-            Helper::resize_crop_image(
-              1280,
-              540,
-              public_path('img/news/' . $fileName),
-              public_path('img/news/' . $fileName)
-            );
-            Helper::resize_crop_image(
-              360,
-              150,
-              public_path('img/news/' . $fileName),
-              public_path('img/news/thumbs/' . $fileName)
-            );
             $img->src = 'img/news/' . $fileName;
-            $img->thumb_src = 'img/news/thumbs' . $fileName;
+            $img->thumb_src = 'img/news/' . $fileName;
             $img->save();
           }
         }
@@ -235,8 +204,8 @@ class AdminController extends Controller
   public function deleteImage($id)
   {
     $img = Image::find($id);
-    unlink($img->src);
-    unlink($img->thumb_src);
+    file_exists($img->src) && unlink($img->src);
+    file_exists($img->thumb_src) && unlink($img->thumb_src);
     $img->delete();
 
     return 'success';
@@ -331,8 +300,8 @@ class AdminController extends Controller
 
         if (count($contribution->images) != 0) {
           foreach ($contribution->images as $image) {
-            unlink($image->src);
-            unlink($image->thumb_src);
+            file_exists($image->src) && unlink($image->src);
+            file_exists($image->thumb_src) && unlink($image->thumb_src);
             $image->delete();
           }
         }
@@ -366,20 +335,8 @@ class AdminController extends Controller
             $img->contribution_id = $contribution->id;
             $fileName = uniqid() . '.' . $file->extension();
             $file->move(public_path('img/contributions'), $fileName);
-            Helper::resize_crop_image(
-              1280,
-              540,
-              public_path('img/contributions/' . $fileName),
-              public_path('img/contributions/' . $fileName),
-            );
-            Helper::resize_crop_image(
-              360,
-              310,
-              public_path('img/contributions/' . $fileName),
-              public_path('img/contributions/thumbs/' . $fileName)
-            );
             $img->src = 'img/contributions/' . $fileName;
-            $img->thumb_src = 'img/contributions/thumbs/' . $fileName;
+            $img->thumb_src = 'img/contributions/' . $fileName;
             $img->save();
           }
         }
@@ -398,20 +355,8 @@ class AdminController extends Controller
             $img->contribution_id = $contribution->id;
             $fileName = uniqid() . '.' . $file->extension();
             $file->move(public_path('img/contributions'), $fileName);
-            Helper::resize_crop_image(
-              1280,
-              540,
-              public_path('img/contributions/' . $fileName),
-              public_path('img/contributions/' . $fileName),
-            );
-            Helper::resize_crop_image(
-              360,
-              310,
-              public_path('img/contributions/' . $fileName),
-              public_path('img/contributions/thumbs/' . $fileName)
-            );
             $img->src = 'img/contributions/' . $fileName;
-            $img->thumb_src = 'img/contributions/thumbs/' . $fileName;
+            $img->thumb_src = 'img/contributions/' . $fileName;
             $img->save();
           }
         }

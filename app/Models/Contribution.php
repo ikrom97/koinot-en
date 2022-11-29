@@ -8,9 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contribution extends Model
 {
-  use HasFactory;
+  use HasFactory, Sluggable;
 
   protected $guarded = [];
+
+  public function sluggable(): array
+  {
+    return [
+      'slug' => [
+        'source' => 'title'
+      ]
+    ];
+  }
 
   public function images()
   {

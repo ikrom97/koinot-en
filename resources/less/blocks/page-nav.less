@@ -21,7 +21,6 @@
 
 .page-nav__container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -36,7 +35,6 @@
 
   @media (max-width: @device-lg) {
     width: 100%;
-    max-width: 710px;
     justify-content: space-between;
   }
 
@@ -61,7 +59,8 @@
     margin-right: 32px;
   }
 
-  &:nth-last-child(2) {
+  &:nth-last-child(2),
+  &:nth-last-child(3) {
     display: none;
   }
 
@@ -81,13 +80,15 @@
     }
   }
 
-  @media (max-width: (@device-lg)) {
-    &:nth-last-child(2) {
+  @media (max-width: (@device-xl)) {
+
+    &:nth-last-child(2),
+    &:nth-last-child(3) {
       display: flex;
     }
 
     &:not(:last-child) {
-      margin-right: 0;
+      margin-right: 24px;
     }
   }
 

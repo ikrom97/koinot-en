@@ -997,7 +997,6 @@ a {
 }
 .page-nav__container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 .page-nav__list {
@@ -1012,7 +1011,6 @@ a {
 @media (max-width: 992px) {
   .page-nav__list {
     width: 100%;
-    max-width: 710px;
     justify-content: space-between;
   }
 }
@@ -1036,7 +1034,8 @@ a {
 .page-nav__item:not(:last-child) {
   margin-right: 32px;
 }
-.page-nav__item:nth-last-child(2) {
+.page-nav__item:nth-last-child(2),
+.page-nav__item:nth-last-child(3) {
   display: none;
 }
 .page-nav__item--current {
@@ -1053,12 +1052,13 @@ a {
   background-color: #ed2e38;
   border-radius: 5px;
 }
-@media (max-width: 992px) {
-  .page-nav__item:nth-last-child(2) {
+@media (max-width: 1200px) {
+  .page-nav__item:nth-last-child(2),
+  .page-nav__item:nth-last-child(3) {
     display: flex;
   }
   .page-nav__item:not(:last-child) {
-    margin-right: 0;
+    margin-right: 24px;
   }
 }
 @media (max-width: 768px) {
@@ -1142,12 +1142,16 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 264px;
   height: 48px;
   font-style: 14px;
   font-weight: 700;
   border: 2px solid #fff;
   border-radius: 4px;
+  padding: 0 32px;
+}
+.carrier-link:first-of-type {
+  margin-right: 24px;
+  margin-left: auto;
 }
 .carrier-link--current {
   background-color: #ed2e38;
@@ -1167,11 +1171,6 @@ a {
   filter: blur(28px);
 }
 @media (max-width: 1200px) {
-  .carrier-link {
-    width: 200px;
-  }
-}
-@media (max-width: 992px) {
   .carrier-link {
     display: none;
   }
@@ -1563,7 +1562,6 @@ a {
 }
 .news-card__img {
   width: 100%;
-  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 32px;
@@ -2334,18 +2332,16 @@ a {
   color: #ff5635;
 }
 .form-dash__images {
-  display: flex;
-  flex-wrap: wrap;
   margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
 }
 .form-dash__images img {
   border-radius: 4px;
   -o-object-fit: cover;
      object-fit: cover;
-}
-.form-dash__images [data-img] {
-  margin-right: 8px;
-  margin-bottom: 8px;
+  width: 100%;
 }
 .form-dash__images [data-img]:hover {
   position: relative;
