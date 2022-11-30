@@ -124,6 +124,9 @@
     </div>
 
     <section class="main-page__news">
+      <div class="anim"></div>
+      <div class="anim second"></div>
+      <div class="anim third"></div>
       <div class="main-page__news-container container">
         <div class="content">
           <h2>Our news</h2>

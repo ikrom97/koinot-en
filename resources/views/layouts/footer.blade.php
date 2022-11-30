@@ -1,5 +1,8 @@
 <footer class="page-footer">
   <div class="page-footer__top">
+    <div class="anim"></div>
+    <div class="anim second"></div>
+    <div class="anim third"></div>
     <dl class="page-footer__menu">
       <div class="page-footer__menu-list">
         <dt class="page-footer__menu-caption">About us</dt>
@@ -39,11 +42,11 @@
             Contribution to society
           </a>
         </dd>
-        <dd class="page-footer__menu-item">
+        {{-- <dd class="page-footer__menu-item">
           <a class="page-footer__menu-link" href="https://sport.koinotinav.com/" target="_blank">
             KOINOTI NAV Cup
           </a>
-        </dd>
+        </dd> --}}
         <dd class="page-footer__menu-item">
           <a class="page-footer__menu-link" href="{{ route('carrier') }}">
             Carreer
