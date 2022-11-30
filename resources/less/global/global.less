@@ -289,3 +289,31 @@ a {
     color: @secondary;
   }
 }
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+.anim {
+  animation: slide 12s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, @secondary-light 50%, @secondary 0);
+  height: 100%;
+  left: -50%;
+  opacity: .3;
+  position: absolute;
+  right: -50%;
+  top: 0;
+}
+
+.anim.second,
+.anim.second {
+  animation-direction: alternate-reverse;
+  animation-duration: 16s;
+}
+
