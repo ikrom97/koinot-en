@@ -42,11 +42,11 @@
             Contribution to society
           </a>
         </dd>
-        {{-- <dd class="page-footer__menu-item">
+        <dd class="page-footer__menu-item">
           <a class="page-footer__menu-link" href="https://sport.koinotinav.com/" target="_blank">
-            KOINOTI NAV Cup
+            &#8220;KOINOTI NAV&#8221; Cup
           </a>
-        </dd> --}}
+        </dd>
         <dd class="page-footer__menu-item">
           <a class="page-footer__menu-link" href="{{ route('carrier') }}">
             Carreer
