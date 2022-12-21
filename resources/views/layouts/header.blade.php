@@ -45,9 +45,11 @@
   </div>
 
   <nav class="page-nav">
-    <div class="anim"></div>
-    <div class="anim second"></div>
-    <div class="anim third"></div>
+    <div class="anim-container">
+      <div class="anim"></div>
+      <div class="anim second"></div>
+      <div class="anim third"></div>
+    </div>
     <div class="page-nav__container container">
       <ul class="page-nav__list">
         <li class="page-nav__item {{ $route == 'main' ? 'page-nav__item--current' : '' }}">

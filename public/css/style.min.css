@@ -658,6 +658,15 @@ a {
     transform: translateX(25%);
   }
 }
+.anim-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
 .anim {
   -webkit-animation: slide 12s ease-in-out infinite alternate;
           animation: slide 12s ease-in-out infinite alternate;
@@ -1263,6 +1272,7 @@ a {
 }
 .page-footer {
   background-color: #fff;
+  overflow-x: hidden;
 }
 .page-footer__top {
   position: relative;
@@ -2909,6 +2919,7 @@ a {
   padding-top: 64px;
   padding-bottom: 64px;
   color: #fff;
+  overflow-x: hidden;
 }
 @media (max-width: 576px) {
   .main-page__news {

@@ -15,7 +15,7 @@
 
   <h3 class="news-card__title">{{ $news->title }}</h3>
 
-  <div class="news-card__description">{!! $news->content !!}</div>
+  <div class="news-card__description">{!! strip_tags($news->content) !!}</div>
 
   <a class="news-card__link" href="{{ route('news.show', $news->slug) }}">More detailed</a>
 </article>
