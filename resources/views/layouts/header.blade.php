@@ -15,7 +15,7 @@
             <use xlink:href="#email"></use>
           </svg>
         </span>
-        <span class="details__info">info@koinotinav.tj</span>
+        <span class="details__info">info@koinotinav.com</span>
       </a>
       <a class="details__item" href="tel:+992446000043">
         <span class="details__icon">
